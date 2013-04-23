@@ -1,0 +1,71 @@
+/*---------------------------------------------------------
+        =GLOBAL STYLE
+-------------------------------------------------------- */
+
+body {
+	background: #000;
+}
+
+#wrapper {
+	width: 420px;
+}
+
+/*---------------------------------------------------------
+        =UNAV
+-------------------------------------------------------- */
+
+@import 'pixo.mixins.scss';
+
+$unav-height: 50px;
+$unav-li-margin-side: 15px;
+
+.unav {
+	font: 14px Lucida Grande, Arial, sans-serif;
+	height: $unav-height;
+	padding: 0;
+	position: relative;
+		
+	li {		
+		float: left;
+		list-style-type: none;
+		margin: 0;
+		text-align: center;
+		
+		&.unav-underline {
+			background-color: #545454;
+			bottom: 5px;
+			height: 4px;
+			left: 0;
+			padding: 0;
+			position: absolute;
+			width: 100%;
+		}
+		
+		&.unav-selector {
+			background-color: #545454;
+			bottom: 5px;
+			left: 0px;
+			height: 4px;
+			position: absolute;
+			width: 0px;
+		}
+		
+		a {
+			$unav-a-margin-top-bottom: 4px;
+			color: #545454;
+			display: block;
+			height: $unav-height - $unav-a-margin-top-bottom*2;
+			line-height: $unav-height - $unav-a-margin-top-bottom*2;
+			padding: 0 $unav-li-margin-side;
+			text-decoration: none;
+			@include transition( (background .5s, color .5s ) );
+		}
+		
+		&.in {
+			a {
+				background: #222; 
+				color: #fff;
+			}
+		}
+	}
+}

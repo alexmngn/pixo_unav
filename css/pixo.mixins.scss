@@ -1,0 +1,68 @@
+$prefixes: "-moz-", "-webkit-", "-o-", "-ms-", "";
+
+@mixin radial-gradient($position, $background_color1, $background_color2, $background_position1, $background_position2) {		
+		background: $background_color2; /* Old browsers */
+		background: -moz-radial-gradient($position, ellipse cover,  $background_color1 $background_position1, $background_color2 $background_position2); /* FF3.6+ */
+		background: -webkit-radial-gradient($position, ellipse cover,  $background_color1 $background_position1,$background_color2 $background_position2); /* Chrome10+,Safari5.1+ */
+		background: -o-radial-gradient($position, ellipse cover,  $background_color1 $background_position1,$background_color2 $background_position2); /* Opera 12+ */
+		background: -ms-radial-gradient($position, ellipse cover,  $background_color1 $background_position1,$background_color2 $background_position2); /* IE10+ */
+		background: radial-gradient(ellipse at $position,  $background_color1 $background_position1,$background_color2 $background_position2); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$background_color1', endColorstr='$background_color2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin linear-gradient($position1, $position2, $background_color1, $background_color2, $background_position1, $background_position2) {		
+		background: $background_color2; /* Old browsers */
+		background: -moz-linear-gradient($position1,  $background_color1 $background_position1, $background_color2 $background_position2); /* FF3.6+ */
+		background: -webkit-gradient(linear, $position1, 0px, $position2, 100%, color-stop(0%,$background_color1), color-stop($background_position2,$background_color2)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient($position1, $background_color1 $background_position1,$background_color2 $background_position2); /* Chrome,Safari4+ */
+		background: -o-linear-gradient($position1, $background_color1 $background_position1,$background_color2 $background_position2); /* Opera 12+ */
+		background: -ms-linear-gradient($position1, $background_color1 $background_position1,$background_color2 $background_position2); /* IE10+ */
+		background: linear-gradient(to $position2,  $background_color1 $background_position1,$background_color2 $background_position2); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$background_color1', endColorstr='$background_color2',GradientType=0 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin transition($transition) {
+	@each $prefix in $prefixes {
+		#{$prefix}transition:$transition; 
+	}
+}
+
+@mixin animation($animation) {
+	@each $prefix in $prefixes {
+		#{$prefix}animation:$animation; 
+	}
+}
+
+@mixin animation-delay($animation-delay) {
+	@each $prefix in $prefixes {
+		#{$prefix}animation-delay:$animation-delay; 
+	}
+}
+
+@mixin transform($transform) {
+	@each $prefix in $prefixes {
+		#{$prefix}transform:$transform; 
+	}
+}
+
+@mixin rounded($radius) {
+	@each $prefix in $prefixes {
+		#{$prefix}border-radius:$radius; 
+	}
+}
+
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content; 
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	} 
+}

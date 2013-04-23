@@ -1,0 +1,60 @@
+/*---------------------------------------------------------
+        =GLOBAL STYLE
+-------------------------------------------------------- */
+body {
+  background: #000;
+}
+
+#wrapper {
+  width: 420px;
+}
+
+/*---------------------------------------------------------
+        =UNAV
+-------------------------------------------------------- */
+.unav {
+  font: 14px Lucida Grande, Arial, sans-serif;
+  height: 50px;
+  padding: 0;
+  position: relative;
+}
+.unav li {
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  text-align: center;
+}
+.unav li.unav-underline {
+  background-color: #545454;
+  bottom: 5px;
+  height: 4px;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+.unav li.unav-selector {
+  background-color: #545454;
+  bottom: 5px;
+  left: 0px;
+  height: 4px;
+  position: absolute;
+  width: 0px;
+}
+.unav li a {
+  color: #545454;
+  display: block;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 15px;
+  text-decoration: none;
+  -moz-transition: background 0.5s, color 0.5s;
+  -webkit-transition: background 0.5s, color 0.5s;
+  -o-transition: background 0.5s, color 0.5s;
+  -ms-transition: background 0.5s, color 0.5s;
+  transition: background 0.5s, color 0.5s;
+}
+.unav li.in a {
+  background: #222;
+  color: #fff;
+}
