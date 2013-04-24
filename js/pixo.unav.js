@@ -60,7 +60,7 @@
 			pixo.$el.find('> li').on('mouseenter', 'a', function() {
 				pixo.goto($(this));
 			});
-			pixo.$el.find('> li').on('mouseleave', 'a', function() {
+			pixo.$el.on('mouseleave', function() {
 				pixo.goto(pixo.$el.find('> li.unav-active > a'));
 			});
 		};
