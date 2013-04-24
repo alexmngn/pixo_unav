@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<ul id="unav">
+			<ul id="menu1">
 				<li data-unav-color="green"><a href="#menu1">Home</a></li>
 				<li data-unav-color="blue"><a href="#menu2">Blogs</a></li>
 				<li data-unav-color="white"><a href="#menu3">Projects</a></li>
@@ -15,7 +15,7 @@
 				<li data-unav-color="#ffff00"><a href="#menu5">Contact</a></li>
 			</ul>
 			
-			<ul id="unav2">
+			<ul id="menu2">
 				<li data-unav-color="aqua"><a href="#menu1">Lorem</a></li>
 				<li data-unav-color="#ff00ff" class="unav-active"><a href="#menu2">Ipsum</a></li>
 				<li data-unav-color="#00ff00"><a href="#menu3">Dolor</a></li>
@@ -25,8 +25,8 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/pixo.unav.js"></script>
 		<script type="text/javascript">
-			$('#unav').pixo_unav();
-			$('#unav2').pixo_unav();
+			$('ul#menu1').pixo_unav();
+			$('ul#menu2').pixo_unav();
 		</script>
 	</body>
 </html>
